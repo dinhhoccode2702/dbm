@@ -1,0 +1,35 @@
+﻿label,mode,op,system,plan
+1m,no_index,R1,MySQL,nhan_khau:const:uq_nhan_khau_cccd
+1m,no_index,R1,MongoDB,PROJECTION_SIMPLE>FETCH>IXSCAN
+1m,no_index,R2,MySQL,nhan_khau:ALL:-
+1m,no_index,R2,MongoDB,PROJECTION_SIMPLE>SORT>COLLSCAN
+1m,no_index,R3,MySQL,nk:const:uq_nhan_khau_cccd | tv:ref:ix_thanh_vien_nhan_khau | hk:eq_ref:PRIMARY
+1m,no_index,R3,MongoDB,EXPRESS_IXSCAN
+1m,no_index,R4,MySQL,hk:const:uq_ho_khau_ma_ho | tv:ref:uq_thanh_vien_ho | nk:eq_ref:PRIMARY
+1m,no_index,R4,MongoDB,PROJECTION_SIMPLE>FETCH>IXSCAN
+1m,no_index,R5,MySQL,nk:const:uq_nhan_khau_cccd | bd:ref:ix_bien_dong_nhan_khau_ngay
+1m,no_index,R5,MongoDB,FETCH>IXSCAN
+1m,no_index,A1,MySQL,nhan_khau:ALL:-
+1m,no_index,A1,MongoDB,"[$cursor,$sort] GROUP>COLLSCAN"
+1m,no_index,A2,MySQL,t:ALL:- | nk:eq_ref:PRIMARY
+1m,no_index,A2,MongoDB,"[$cursor,$unwind,$match,$group,$sort] PROJECTION_SIMPLE>COLLSCAN"
+1m,no_index,J1,MySQL,hk:range:PRIMARY | tv:ref:uq_thanh_vien_ho | nk:eq_ref:PRIMARY
+1m,no_index,J1,MongoDB,"[$cursor,$unwind,$project,$sort] PROJECTION_SIMPLE>FETCH>IXSCAN"
+1m,no_index,J2,MongoDB,"[$cursor,$lookup,$project,$sort] PROJECTION_SIMPLE>FETCH>IXSCAN"
+1m,with_index,R1,MySQL,nhan_khau:const:uq_nhan_khau_cccd
+1m,with_index,R1,MongoDB,PROJECTION_SIMPLE>FETCH>IXSCAN
+1m,with_index,R2,MySQL,nhan_khau:range:ix_nhan_khau_ho_ten
+1m,with_index,R2,MongoDB,LIMIT>PROJECTION_SIMPLE>FETCH>IXSCAN
+1m,with_index,R3,MySQL,nk:const:uq_nhan_khau_cccd | tv:ref:ix_thanh_vien_nhan_khau | hk:eq_ref:PRIMARY
+1m,with_index,R3,MongoDB,EXPRESS_IXSCAN
+1m,with_index,R4,MySQL,hk:const:uq_ho_khau_ma_ho | tv:ref:uq_thanh_vien_ho | nk:eq_ref:PRIMARY
+1m,with_index,R4,MongoDB,PROJECTION_SIMPLE>FETCH>IXSCAN
+1m,with_index,R5,MySQL,nk:const:uq_nhan_khau_cccd | bd:ref:ix_bien_dong_nhan_khau_ngay
+1m,with_index,R5,MongoDB,FETCH>IXSCAN
+1m,with_index,A1,MySQL,nhan_khau:index:ix_nk_que_quan_gioi_tinh
+1m,with_index,A1,MongoDB,"[$cursor,$sort] GROUP>COLLSCAN"
+1m,with_index,A2,MySQL,t:ref:ix_tttv_trang_thai_loai | nk:eq_ref:PRIMARY
+1m,with_index,A2,MongoDB,"[$cursor,$unwind,$match,$group,$sort] PROJECTION_SIMPLE>FETCH>IXSCAN"
+1m,with_index,J1,MySQL,hk:range:PRIMARY | tv:ref:uq_thanh_vien_ho | nk:eq_ref:PRIMARY
+1m,with_index,J1,MongoDB,"[$cursor,$unwind,$project,$sort] PROJECTION_SIMPLE>FETCH>IXSCAN"
+1m,with_index,J2,MongoDB,"[$cursor,$lookup,$project,$sort] PROJECTION_SIMPLE>FETCH>IXSCAN"

@@ -1,0 +1,18 @@
+{
+  "time": "2026-11-25T23:23:17",
+  "machine": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel",
+  "os": "Windows-11-10.0.26300-SP0",
+  "cpu_count": 20,
+  "python": "3.12.4",
+  "pymysql": "2.2.8",
+  "pymongo": "4.16.0",
+  "mysql_version": "8.0.44",
+  "mysql_buffer_pool_mb": 2048,
+  "mysql_flush_log_at_trx_commit": "1",
+  "mongo_version": "8.0.13",
+  "mongo_wt_cache_mb": 2048,
+  "mongo_write_concern": "w=1, j=True",
+  "label": "1m",
+  "citizens": 1000000,
+  "households": 250000
+}

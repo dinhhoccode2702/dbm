@@ -1,0 +1,55 @@
+﻿label,mode,op,group,title,system,rows,n,median_ms,p95_ms,mean_ms,min_ms,max_ms,stdev_ms
+1m,no_index,R1,read,Tra cứu nhân khẩu theo CCCD,MySQL,1,300,0.822,1.644,0.902,0.192,3.037,0.4
+1m,no_index,R1,read,Tra cứu nhân khẩu theo CCCD,MongoDB,1,300,2.58,3.653,2.462,0.744,4.64,0.794
+1m,no_index,R2,read,Tìm theo tiền tố họ tên + quê quán (100 dòng),MySQL,86,60,754.939,818.581,749.404,578.132,861.797,52.106
+1m,no_index,R2,read,Tìm theo tiền tố họ tên + quê quán (100 dòng),MongoDB,86,60,2213.927,2324.153,2212.993,1917.468,2358.087,73.756
+1m,no_index,R3,read,Hồ sơ đầy đủ 1 nhân khẩu (hộ + tạm trú/tạm vắng),MySQL,2,300,2.016,4.443,2.301,0.886,6.904,1.073
+1m,no_index,R3,read,Hồ sơ đầy đủ 1 nhân khẩu (hộ + tạm trú/tạm vắng),MongoDB,2,300,2.434,4.631,2.567,0.455,5.882,1.246
+1m,no_index,R4,read,Danh sách thành viên 1 hộ theo mã hộ,MySQL,4,300,2.885,4.294,2.793,0.547,5.436,0.947
+1m,no_index,R4,read,Danh sách thành viên 1 hộ theo mã hộ,MongoDB,4,300,1.428,3.057,1.538,0.241,4.509,0.855
+1m,no_index,R5,read,Lịch sử biến động 1 nhân khẩu theo CCCD,MySQL,1,300,0.587,1.404,0.668,0.191,2.514,0.38
+1m,no_index,R5,read,Lịch sử biến động 1 nhân khẩu theo CCCD,MongoDB,1,300,0.6,1.326,0.679,0.237,2.199,0.31
+1m,no_index,A1,aggregate,Thống kê nhân khẩu theo giới tính × quê quán,MySQL,20,15,3281.789,3381.052,3273.503,3107.643,3490.473,103.953
+1m,no_index,A1,aggregate,Thống kê nhân khẩu theo giới tính × quê quán,MongoDB,20,15,951.513,980.986,930.414,746.934,1011.052,62.238
+1m,no_index,A2,aggregate,Số người đang tạm trú theo quê quán,MySQL,10,15,175.299,188.716,174.953,156.566,199.952,11.508
+1m,no_index,A2,aggregate,Số người đang tạm trú theo quê quán,MongoDB,10,15,1670.695,1714.295,1658.826,1565.74,1740.033,55.298
+1m,no_index,J1,join,Thành viên của 1000 hộ (MongoDB: dữ liệu nhúng),MySQL,4000,40,81.875,95.668,78.462,38.455,100.323,13.807
+1m,no_index,J1,join,Thành viên của 1000 hộ (MongoDB: dữ liệu nhúng),MongoDB,4000,40,47.971,54.855,47.6,30.467,56.287,6.21
+1m,no_index,J2,join,Thành viên của 1000 hộ (MongoDB: $lookup),MongoDB,4000,40,289.497,309.001,282.02,198.102,336.512,28.45
+1m,no_index,W1,write,Đăng ký nhân khẩu mới vào hộ có sẵn,MySQL,0,200,4.954,7.081,4.999,2.078,11.524,1.295
+1m,no_index,W1,write,Đăng ký nhân khẩu mới vào hộ có sẵn,MongoDB,0,200,4.976,6.74,5.024,2.366,8.198,1.071
+1m,no_index,W2,write,Cập nhật họ tên nhân khẩu,MySQL,0,200,2.932,3.898,2.923,1.555,4.452,0.649
+1m,no_index,W2,write,Cập nhật họ tên nhân khẩu,MongoDB,0,200,4.084,5.454,4.09,2.022,6.903,0.84
+1m,no_index,W3,write,Ghi nhận 1 biến động,MySQL,0,200,2.854,3.684,2.825,1.508,5.013,0.565
+1m,no_index,W3,write,Ghi nhận 1 biến động,MongoDB,0,200,1.534,2.293,1.546,0.731,2.973,0.424
+1m,no_index,W4,write,"Nhập lô 10,000 biến động",MySQL,0,12,456.636,486.08,439.283,328.836,548.848,64.616
+1m,no_index,W4,write,"Nhập lô 10,000 biến động",MongoDB,0,12,224.971,253.135,226.47,181.213,254.686,21.878
+1m,no_index,W5,write,"Xóa nhân khẩu (kèm thành viên hộ, biến động)",MySQL,0,200,3.872,5.208,3.802,2.163,7.595,0.978
+1m,no_index,W5,write,"Xóa nhân khẩu (kèm thành viên hộ, biến động)",MongoDB,0,200,7.143,8.835,7.074,3.582,10.135,1.205
+1m,with_index,R1,read,Tra cứu nhân khẩu theo CCCD,MySQL,1,300,0.156,0.275,0.184,0.13,0.627,0.068
+1m,with_index,R1,read,Tra cứu nhân khẩu theo CCCD,MongoDB,1,300,0.311,0.73,0.358,0.218,3.002,0.219
+1m,with_index,R2,read,Tìm theo tiền tố họ tên + quê quán (100 dòng),MySQL,86,60,1.426,3.796,2.032,1.112,4.847,1.027
+1m,with_index,R2,read,Tìm theo tiền tố họ tên + quê quán (100 dòng),MongoDB,86,60,1.963,6.195,3.167,1.414,6.722,1.824
+1m,with_index,R3,read,Hồ sơ đầy đủ 1 nhân khẩu (hộ + tạm trú/tạm vắng),MySQL,2,300,0.874,1.893,0.997,0.414,2.757,0.44
+1m,with_index,R3,read,Hồ sơ đầy đủ 1 nhân khẩu (hộ + tạm trú/tạm vắng),MongoDB,2,300,0.455,0.952,0.532,0.323,1.516,0.214
+1m,with_index,R4,read,Danh sách thành viên 1 hộ theo mã hộ,MySQL,4,300,0.423,1.198,0.561,0.212,1.487,0.323
+1m,with_index,R4,read,Danh sách thành viên 1 hộ theo mã hộ,MongoDB,4,300,0.368,1.016,0.465,0.197,1.485,0.266
+1m,with_index,R5,read,Lịch sử biến động 1 nhân khẩu theo CCCD,MySQL,1,300,0.523,1.098,0.601,0.17,1.374,0.286
+1m,with_index,R5,read,Lịch sử biến động 1 nhân khẩu theo CCCD,MongoDB,1,300,0.339,0.967,0.436,0.191,1.221,0.258
+1m,with_index,A1,aggregate,Thống kê nhân khẩu theo giới tính × quê quán,MySQL,20,15,8292.264,8767.03,6070.051,3126.495,8799.322,2700.893
+1m,with_index,A1,aggregate,Thống kê nhân khẩu theo giới tính × quê quán,MongoDB,20,15,928.982,955.439,919.099,854.781,962.749,32.794
+1m,with_index,A2,aggregate,Số người đang tạm trú theo quê quán,MySQL,10,15,97.751,109.712,94.819,63.354,115.147,14.487
+1m,with_index,A2,aggregate,Số người đang tạm trú theo quê quán,MongoDB,10,15,141.116,150.556,140.858,124.989,155.791,8.308
+1m,with_index,J1,join,Thành viên của 1000 hộ (MongoDB: dữ liệu nhúng),MySQL,4000,40,61.713,79.885,59.34,23.903,116.799,16.975
+1m,with_index,J1,join,Thành viên của 1000 hộ (MongoDB: dữ liệu nhúng),MongoDB,4000,40,44.317,52.878,43.768,30.178,57.334,6.506
+1m,with_index,J2,join,Thành viên của 1000 hộ (MongoDB: $lookup),MongoDB,4000,40,299.51,368.525,292.751,146.257,392.491,49.352
+1m,with_index,W1,write,Đăng ký nhân khẩu mới vào hộ có sẵn,MySQL,0,200,1.976,6.494,3.07,1.385,11.332,1.948
+1m,with_index,W1,write,Đăng ký nhân khẩu mới vào hộ có sẵn,MongoDB,0,200,2.531,5.02,2.961,1.612,11.836,1.238
+1m,with_index,W2,write,Cập nhật họ tên nhân khẩu,MySQL,0,200,2.439,3.888,2.554,1.182,9.756,1.002
+1m,with_index,W2,write,Cập nhật họ tên nhân khẩu,MongoDB,0,200,3.959,8.037,4.055,1.477,9.082,1.941
+1m,with_index,W3,write,Ghi nhận 1 biến động,MySQL,0,200,2.621,4.772,2.885,1.341,11.573,1.31
+1m,with_index,W3,write,Ghi nhận 1 biến động,MongoDB,0,200,1.689,2.389,1.748,0.86,8.806,0.624
+1m,with_index,W4,write,"Nhập lô 10,000 biến động",MySQL,0,12,360.356,423.2,367.63,311.584,426.059,34.081
+1m,with_index,W4,write,"Nhập lô 10,000 biến động",MongoDB,0,12,173.689,192.749,172.039,130.262,237.639,29.973
+1m,with_index,W5,write,"Xóa nhân khẩu (kèm thành viên hộ, biến động)",MySQL,0,200,3.73,5.432,3.792,1.204,8.85,0.946
+1m,with_index,W5,write,"Xóa nhân khẩu (kèm thành viên hộ, biến động)",MongoDB,0,200,5.007,7.211,4.607,1.882,10.72,1.962
