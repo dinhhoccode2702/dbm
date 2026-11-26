@@ -1,0 +1,316 @@
+{
+ "with_index": {
+  "reads": {
+   "MySQL Q1": {
+    "ms": 6.1,
+    "rows": 502,
+    "plan": "nhan_khau:ref/ix_nk_ho_ten"
+   },
+   "MySQL Q2": {
+    "ms": 3.4,
+    "rows": 100,
+    "plan": "nhan_khau:range/ix_nk_que_quan_ho_ten"
+   },
+   "MySQL Q3": {
+    "ms": 930.7,
+    "rows": 20,
+    "plan": "nhan_khau:index/ix_nk_que_quan_gioi_tinh"
+   },
+   "MySQL Q4": {
+    "ms": 128.3,
+    "rows": 10,
+    "plan": "t:ref/ix_tttv_trang_thai_loai; nk:eq_ref/PRIMARY"
+   },
+   "MySQL Q5": {
+    "ms": 109.1,
+    "rows": 4048,
+    "plan": "hk:range/ix_hk_ngay_lap; tv:ref/uq_thanh_vien_ho; nk:eq_ref/PRIMARY"
+   },
+   "MongoDB Q1": {
+    "ms": 5.8,
+    "rows": 502,
+    "plan": "FETCH>IXSCAN docs=502 keys=502 srv=6ms"
+   },
+   "MongoDB Q2": {
+    "ms": 2.7,
+    "rows": 100,
+    "plan": "LIMIT>FETCH>IXSCAN docs=100 keys=100 srv=2ms"
+   },
+   "MongoDB Q3": {
+    "ms": 858.7,
+    "rows": 20,
+    "plan": "{\"namespace\": \"quan_ly_nhan_khau.citizens\", \"parsedQuery\": {}, \"indexFilterSet\": false, \"queryHash\": \"E69FC3DC\", \"planCacheShapeHash\": \"E69FC3DC\", \"planCacheKey"
+   },
+   "MongoDB Q4": {
+    "ms": 101.0,
+    "rows": 10,
+    "plan": "FETCH>IXSCAN docs=9972 keys=9972 srv=60ms"
+   },
+   "MongoDB Q5": {
+    "ms": 49.0,
+    "rows": 4048,
+    "plan": "FETCH>IXSCAN docs=1012 keys=1012 srv=8ms"
+   },
+   "MongoDB Q5b": {
+    "ms": 355.4,
+    "rows": 4048
+   }
+  },
+  "writes": {
+   "MySQL W1": {
+    "ms": 6.7,
+    "runs": [
+     10.2,
+     6.7,
+     6.0
+    ]
+   },
+   "MySQL W2": {
+    "ms": 60.7,
+    "runs": [
+     60.7,
+     56.3,
+     84.3
+    ]
+   },
+   "MySQL W2b": {
+    "ms": 36.9,
+    "runs": [
+     36.9,
+     36.4,
+     39.2
+    ]
+   },
+   "MySQL W3": {
+    "ms": 7330.1,
+    "runs": [
+     6143.7,
+     7330.1,
+     7500.2
+    ]
+   },
+   "MySQL W4": {
+    "ms": 4231.3,
+    "runs": [
+     4020.6,
+     4231.3,
+     4431.3
+    ]
+   },
+   "MySQL W5": {
+    "ms": 3.7,
+    "runs": [
+     4.3,
+     3.7,
+     3.7
+    ]
+   },
+   "MongoDB W1": {
+    "ms": 6.7,
+    "runs": [
+     6.7,
+     6.6,
+     9.9
+    ]
+   },
+   "MongoDB W2": {
+    "ms": 58.3,
+    "runs": [
+     58.3,
+     54.2,
+     114.6
+    ]
+   },
+   "MongoDB W2b": {
+    "ms": 92.3,
+    "runs": [
+     123.8,
+     92.3,
+     73.0
+    ]
+   },
+   "MongoDB W3": {
+    "ms": 4362.5,
+    "runs": [
+     4457.1,
+     4031.8,
+     4362.5
+    ]
+   },
+   "MongoDB W4": {
+    "ms": 5688.0,
+    "runs": [
+     5688.0,
+     5329.3,
+     5907.6
+    ]
+   },
+   "MongoDB W5": {
+    "ms": 8.3,
+    "runs": [
+     6.8,
+     9.8,
+     8.3
+    ]
+   }
+  }
+ },
+ "no_index": {
+  "reads": {
+   "MySQL Q1": {
+    "ms": 1028.1,
+    "rows": 502,
+    "plan": "nhan_khau:ALL/None"
+   },
+   "MySQL Q2": {
+    "ms": 880.9,
+    "rows": 100,
+    "plan": "nhan_khau:ALL/None"
+   },
+   "MySQL Q3": {
+    "ms": 3274.2,
+    "rows": 20,
+    "plan": "nhan_khau:ALL/None"
+   },
+   "MySQL Q4": {
+    "ms": 189.8,
+    "rows": 10,
+    "plan": "t:ALL/None; nk:eq_ref/PRIMARY"
+   },
+   "MySQL Q5": {
+    "ms": 314.8,
+    "rows": 4048,
+    "plan": "hk:ALL/None; tv:ref/uq_thanh_vien_ho; nk:eq_ref/PRIMARY"
+   },
+   "MongoDB Q1": {
+    "ms": 1179.9,
+    "rows": 502,
+    "plan": "COLLSCAN docs=1000000 keys=0 srv=1379ms"
+   },
+   "MongoDB Q2": {
+    "ms": 1794.0,
+    "rows": 100,
+    "plan": "SORT>COLLSCAN docs=1000000 keys=0 srv=1865ms"
+   },
+   "MongoDB Q3": {
+    "ms": 968.4,
+    "rows": 20,
+    "plan": "{\"namespace\": \"quan_ly_nhan_khau.citizens\", \"parsedQuery\": {}, \"indexFilterSet\": false, \"queryHash\": \"E69FC3DC\", \"planCacheShapeHash\": \"E69FC3DC\", \"planCacheKey"
+   },
+   "MongoDB Q4": {
+    "ms": 1678.6,
+    "rows": 10,
+    "plan": "COLLSCAN docs=1000000 keys=0 srv=1551ms"
+   },
+   "MongoDB Q5": {
+    "ms": 465.7,
+    "rows": 4048,
+    "plan": "COLLSCAN docs=250000 keys=0 srv=441ms"
+   },
+   "MongoDB Q5b": {
+    "ms": 758.8,
+    "rows": 4048
+   }
+  },
+  "writes": {
+   "MySQL W1": {
+    "ms": 9.0,
+    "runs": [
+     9.7,
+     9.0,
+     4.6
+    ]
+   },
+   "MySQL W2": {
+    "ms": 2967.9,
+    "runs": [
+     3121.8,
+     2967.9,
+     2719.5
+    ]
+   },
+   "MySQL W2b": {
+    "ms": 3041.4,
+    "runs": [
+     3123.2,
+     2753.4,
+     3041.4
+    ]
+   },
+   "MySQL W3": {
+    "ms": 4837.7,
+    "runs": [
+     4837.7,
+     4865.6,
+     4651.4
+    ]
+   },
+   "MySQL W4": {
+    "ms": 3316.1,
+    "runs": [
+     3530.6,
+     3279.4,
+     3316.1
+    ]
+   },
+   "MySQL W5": {
+    "ms": 7.9,
+    "runs": [
+     7.9,
+     4.7,
+     14.6
+    ]
+   },
+   "MongoDB W1": {
+    "ms": 11.8,
+    "runs": [
+     15.9,
+     11.8,
+     11.6
+    ]
+   },
+   "MongoDB W2": {
+    "ms": 1276.0,
+    "runs": [
+     1073.7,
+     1276.0,
+     1305.1
+    ]
+   },
+   "MongoDB W2b": {
+    "ms": 1292.4,
+    "runs": [
+     1184.1,
+     1382.9,
+     1292.4
+    ]
+   },
+   "MongoDB W3": {
+    "ms": 3440.2,
+    "runs": [
+     3440.2,
+     3430.5,
+     3537.1
+    ]
+   },
+   "MongoDB W4": {
+    "ms": 4265.4,
+    "runs": [
+     4265.4,
+     4149.9,
+     4433.6
+    ]
+   },
+   "MongoDB W5": {
+    "ms": 14.4,
+    "runs": [
+     15.0,
+     14.4,
+     11.6
+    ]
+   }
+  }
+ },
+ "bien_dong_count": 200000,
+ "population_logs_count": 200000
+}

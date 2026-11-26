@@ -19,7 +19,7 @@ Thứ tự làm: **bộ 100k trước, bộ 1M sau**. Như vậy cuối cùng c�
 | `02_load_mysql_100k.sql` | Nạp bộ 100k vào MySQL |
 | `02_load_mysql.sql` | Nạp bộ 1M vào MySQL |
 | `04_load_mongodb.py` | Nạp CSV vào MongoDB (tự in thời gian và dung lượng) |
-| `03_queries_mysql.sql`, `05_queries_mongodb.js` | 8 truy vấn nặng (Q1–Q8) giống nhau ở 2 DB, chạy tay trong Workbench/Compass theo 2 phần: không index phụ và có index phụ |
+| `03_queries_mysql.sql`, `05_queries_mongodb.js` | 5 truy vấn đọc (Q1–Q5) và 5 thao tác ghi (W1–W5) tương ứng ở 2 DB, chạy tay trong Workbench/Compass theo 2 phần: không index phụ và có index phụ |
 | `06_benchmark.py`, `07_plot_results.py` | Đo hiệu năng và vẽ biểu đồ (mục 5) |
 | `docs\` | Tài liệu nghiệp vụ và thiết kế CSDL |
 
